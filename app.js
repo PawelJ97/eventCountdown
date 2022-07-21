@@ -42,7 +42,7 @@ function updateItems(){
     console.log(days,hours,mimutes,seconds)
     // hide input
     inputContainer.hidden = true
-    
+
     // if countdown end, show complete event
     if(distance < 0){
         countdownItem.hidden = true
@@ -77,7 +77,11 @@ function updateTimer(e){
     console.log(countdownDate, countdownTitle)
     // check the correctness of the date/date must be selected
     if (countdownDate === ''){
-        alert('You must select the date of the events')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oh no...',
+            text: 'Please, select a date of event',
+          })
     }else {
         // get version of current date
         countdownValue = new Date(countdownDate).getTime()
