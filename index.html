@@ -16,19 +16,19 @@
 <div class="container">
 <!--INPUT-->
     <div class="input-container" id="input-container">
-        <h1>Create countdown timer</h1>
+        <h1>CREATE EVENT</h1>
         <form class="form" id="countdownForm">
-            <label for="title">Name of the event</label>
-            <input type="text" id="title" placeholder="Countdown">
+            <label for="title">Name</label>
+            <input type="text" id="title" placeholder="Enter event name">
 
-            <label for="date-picker">Date of the event</label>
+            <label for="date-picker">Date of event</label>
             <input type="date" id="date-picker">
-            <button type="submit">Submit</button>
+            <button type="submit">CREATE</button>
         </form>
     </div>
 <!--COUNTDOWN-->
     <div class="countdown" id="countdown" hidden>
-        <h1 class="countdown-title" id="countdown-title">Countdown title</h1>
+        <h1 class="countdown-title" id="countdown-title"></h1>
         <ul>
             <li><span></span>Days</li>
             <li><span></span>Hours</li>
@@ -40,11 +40,9 @@
 <!--COMPLETE-->
     <div class="complete" id="complete" hidden >
         <h1 class="complete-title">Countdown Complete!!</h1>
-        <h1 id="complete-info">Finished on 10-10-2022</h1>
+        <h1 id="complete-info"></h1>
         <button id="complete-button">Start new Countdown</button>
     </div>
-
-
 </div>
     <script src="app.js"></script>
 </body>
