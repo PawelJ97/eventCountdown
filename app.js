@@ -17,7 +17,11 @@ let countdownValue = Date
 let countdownActive;
 let saveCountdown
 
+//LOADING SCREEN
 let loadingSpinner = document.getElementById('loading-spinner')
+window.addEventListener('load', function () {
+    loadingSpinner.parentElement.removeChild(loadingSpinner)
+ })
 
 //milliseconds - converting to values ​​in timer
 const second = 1000
@@ -90,6 +94,7 @@ function updateTimer(e){
         console.log('countdown value :', countdownValue)
         updateItems()
     }
+}
 //Function that Reset values
 function reset(){
     //hide all/show inputs
@@ -116,8 +121,6 @@ function loadLastCountdown(){
     }
 }
 //event Listners
-window.addEventListener('load', function () {
-   loadingSpinner.parentElement.removeChild(loadingSpinner)})
 countdownForm.addEventListener('submit', updateTimer)
 countdownBtn.addEventListener('click', reset)
 completeBtn.addEventListener('click', reset)
