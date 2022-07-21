@@ -17,17 +17,19 @@ let countdownValue = Date
 let countdownActive;
 let saveCountdown
 
-//milliseconds - convert to values ​​in timer
+let loadingSpinner = document.getElementById('loading-spinner')
+
+//milliseconds - converting to values ​​in timer
 const second = 1000
 const minute = second * 60
 const hour = minute * 60
 const day = hour * 24
 
-//DATE INPUT WITH TODAY'S DATE
+//Entering today's date / Only a date from the future can be selected
 const today = new Date().toISOString().split('T')[0]
 datePicker.setAttribute('min', today)
 
-// input data as a complement to countdown/ 
+// input data as a complement to countdown
 //distance -how much to the entered event - milliseconds
 function updateItems(){
     countdownActive = setInterval(() =>{
@@ -50,7 +52,7 @@ function updateItems(){
         completeItemInfo.textContent = `${countdownTitle} Ended on ${countdownDate}`
         completeItem.hidden = false
     } else{
-    // Countdown in progres
+    // Countdown still in progres
         countdownItemTitle
         .textContent = `${countdownTitle}`
         timerElements[0].textContent = `${days}`
@@ -60,14 +62,14 @@ function updateItems(){
         completeItem.hidden = true
         countdownItem.hidden = false
     }
-    }, second) //second with countdownActive - the counter correctly updates every second
+    }, second) // counter updates every second/ console
 }
 //FUNCTION-value from input
 function updateTimer(e){
     e.preventDefault()
     countdownDate = e.srcElement[1].value
     countdownTitle = e.srcElement[0].value
-    // saved info
+    // information to be saved in localStorage
     saveCountdown = {
         title: countdownTitle,
         date: countdownDate
@@ -88,7 +90,6 @@ function updateTimer(e){
         console.log('countdown value :', countdownValue)
         updateItems()
     }
-}
 //Function that Reset values
 function reset(){
     //hide all/show inputs
@@ -115,6 +116,8 @@ function loadLastCountdown(){
     }
 }
 //event Listners
+window.addEventListener('load', function () {
+   loadingSpinner.parentElement.removeChild(loadingSpinner)})
 countdownForm.addEventListener('submit', updateTimer)
 countdownBtn.addEventListener('click', reset)
 completeBtn.addEventListener('click', reset)
