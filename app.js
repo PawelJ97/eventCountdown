@@ -20,8 +20,8 @@ let saveCountdown
 //LOADING SCREEN
 let loadingSpinner = document.getElementById('loading-spinner')
 window.addEventListener('load', function () {
-    loadingSpinner.parentElement.removeChild(loadingSpinner)
- })
+    loadingSpinner.parentElement.removeChild(loadingSpinner);
+ });
 
 //milliseconds - converting to values ​​in timer
 const second = 1000

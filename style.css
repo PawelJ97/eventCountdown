@@ -113,6 +113,7 @@ li span{
 .complete-title{
     animation: complete 7s infinite;
 }
+
 /*LOADING SCREEN*/
 .loading-spinner{
     width: 100%;
@@ -181,24 +182,20 @@ li span{
     }
 }
 /*---@MEDIA---*/
-@media screen and  (max-width: 600px) {
+@media screen and (min-width: 250px) {
     .video-background {
-        height: 105vh;
+        height: 101vh;
         width: 100vw;
-    }
-    .video-overlay{
-        display: none;
     }
     video{
         object-fit: cover;
-        margin-top: -1px;
     }
     .container{
         min-width: unset;
         width: 100vw;
         min-height: 250px;
         padding: 20px;
-        margin: 10px;
+        margin: auto;
     }
     .form{
         min-width: none;
@@ -206,7 +203,6 @@ li span{
     }
     li span{
         font-size: 3rem;
-
     }
     li{
         display: inline-block;
@@ -215,6 +211,7 @@ li span{
     }
     h1{
         font-size: 1.3rem;
+        max-width: 290px;
     }
     @keyframes complete{
         50%{
@@ -222,19 +219,17 @@ li span{
             transform: scale(1.2);
         }}
     }
-@media screen and (max-width:310px){
-    .video-background{
-        height: 140vh;
-        width: 140vh;
+
+@media screen and (min-width: 550px){
+    .container{
+        max-width: 60vw;
+        margin: auto;
     }
-    ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column
-    }
-    .loading-spinner{
-        height: 125%;
-        width: 115%;
+}
+
+@media screen and (min-width: 960px){
+    .container{
+        max-width: 35vw;
+        margin: auto;
     }
 }
